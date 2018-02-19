@@ -2,6 +2,7 @@ package co.borucki.SiennBlogPostIt.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "post")
@@ -86,5 +87,24 @@ public class BlogPost {
                 ", likeItCounter=" + likeItCounter +
                 ", postCategory=" + postCategory.getName() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BlogPost blogPost = (BlogPost) o;
+        return id == blogPost.id &&
+                likeItCounter == blogPost.likeItCounter &&
+                Objects.equals(title, blogPost.title) &&
+                Objects.equals(contents, blogPost.contents) &&
+                Objects.equals(author, blogPost.author) &&
+                Objects.equals(postCategory, blogPost.postCategory);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, title, contents, author, likeItCounter, postCategory);
     }
 }

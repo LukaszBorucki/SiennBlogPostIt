@@ -27,7 +27,7 @@ public class UpdateBlogPostUseCaseTest {
         BlogPost blogPost1 = getBlogPost();
         Optional<BlogPost> optionalBlogPost = Optional.ofNullable(blogPost1);
         when(blogPostRepository.getById(1)).thenReturn(optionalBlogPost);
-        blogPost1.setLikeItCounter(blogPost1.getLikeItCounter() + 1);
+        blogPost1.increaseLikeCounter();
         BlogPost actual = updateBlogPostUseCase.updateLike(1);
         assertEquals(blogPost1, actual);
     }

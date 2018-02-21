@@ -7,12 +7,6 @@ public class BlogHeaderDTO {
     private String title;
     private String contents;
 
-    public BlogHeaderDTO(long id, String title, String contents) {
-        this.id = id;
-        this.title = title;
-        this.contents = contents.substring(0, contents.length() < 30 ? contents.length() : 30);
-    }
-
     public long getId() {
         return id;
     }
@@ -34,7 +28,7 @@ public class BlogHeaderDTO {
     }
 
     public void setContents(String contents) {
-        this.contents = contents.substring(0, contents.length() < 30 ? contents.length() : 30);
+        this.contents = contents;
     }
 
     @Override

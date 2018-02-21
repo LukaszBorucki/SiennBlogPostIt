@@ -17,7 +17,7 @@ public class UpdateBlogPostUseCase {
     @Transactional
     public BlogPost updateLike(long blogPostId) {
         BlogPost updatedBlogPost = this.fetchBlogPost(blogPostId);
-        updatedBlogPost.setLikeItCounter(updatedBlogPost.getLikeItCounter() + 1);
+        updatedBlogPost.increaseLikeCounter();
         return updatedBlogPost;
     }
 

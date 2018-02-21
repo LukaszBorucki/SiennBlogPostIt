@@ -107,4 +107,8 @@ public class BlogPost {
 
         return Objects.hash(id, title, contents, author, likeItCounter, postCategory);
     }
+
+    public void increaseLikeCounter() {
+        this.likeItCounter++;
+    }
 }

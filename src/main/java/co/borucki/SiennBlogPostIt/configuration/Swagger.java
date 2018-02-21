@@ -26,12 +26,16 @@ public class Swagger {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Sienn BlogPostIt Api")
-                .description("Api allows modifying different values")
-                .termsOfServiceUrl("http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm?Open")
-                .contact("Niklas Heidloff")
-                .license("Apache License Version 2.0")
-                .licenseUrl("https://github.com/IBM-Bluemix/news-aggregator/blob/master/LICENSE")
-                .version("2.0")
+                .description("Api allows you to: " +
+                        "\n- show all PostIt" +
+                        "\n- show the best rated author in each category" +
+                        "\n- show postIt header" +
+                        "\n- like PostIt" +
+                        "\n- create new PostIt")
+                .contact("Łukasz Borucki")
+                .license("GPL")
+                .licenseUrl("http://www.brucki.co/SiennBlogPostIt-licence")
+                .version("1.0")
                 .build();
     }
 }
